@@ -1,0 +1,13 @@
+[System]
+
+# Enter the absolute path to Audiveris.
+AUDIVERIS_PATH = /usr/bin/audiveris
+
+# Enter the absolute path to MuseScore.
+MUSESCORE_PATH = /usr/bin/musescore
+
+# Enter the absolute path to your media player.
+PLAYER_PATH = /usr/bin/vlc
+
+# Enter the absolute path to your PDF viewer.
+PDF_VIEWER = /usr/bin/evince
