@@ -1,5 +1,4 @@
-# Need to be shrinked up. Boring stuff though, dealing with files in a
-# directory...!
+# Needs to be shrinked up.
 
 import aes
 import atonalize
