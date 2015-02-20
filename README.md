@@ -43,9 +43,9 @@ yourself.
 
 ---
 <h3> Warning </h3>
-It's better to not use anything in pdf or jpg format since the optical music recognition softwares 
+It's better to not import anything in pdf or jpg format since the optical music recognition softwares 
 are very faulty. The optimal format to be used with this program is MusicXML, which you'll be able to find plenty
-of it on [MuseScore's library](http://musescore.com/sheetmusic)
+of it on [MuseScore's library](http://musescore.com/sheetmusic). "mxl" and "mscz" formats are fine as well.
 
 ---
 <h3> How to work with it </h3>
