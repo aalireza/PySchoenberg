@@ -49,7 +49,7 @@ of it on [MuseScore's library](http://musescore.com/sheetmusic)
 ---
 <h3> How to work with it </h3>
 
-First go to ./config.txt and change what you need. Then cd into .src i.e.
+Clone this locally or download it as zip (link to your right). First go to ./config.txt and change what you need. Then cd into .src i.e.
 ``` cd ~/PATH TO MAIN FOLDER/PySchoenberg/src/ ``` then 
 ``` python main.py -f ABSOLUTE-PATH-TO-YOUR-FILE ```. The rest should be obvious (you may press 'h' there for
 help).
@@ -82,6 +82,6 @@ Also, its normal/tonal version is  [here]
 
 ---
 
-<b>Credits: </b> This was a hackathon project which was created for SBHacks 2015 [+](http://challengepost.com/software/modern-mozart). "Parham Pourdavood" had the original idea of using 12-tones to atonalize musical sheets while saving the rhythm and "Ahmed Shehata" was creating a front-end GUI with Java which was not finished.
+<b>Credits: </b> This was a hackathon project which was created for SBHacks 2015 [(Link  is here)](http://challengepost.com/software/modern-mozart). "Parham Pourdavood" had the original idea of using 12-tones to atonalize musical sheets while saving the rhythm and "Ahmed Shehata" was creating a front-end GUI with Java which was not finished.
 
 <b>Disclaimer: </b> Since it was originally a hackathon project (albeit the design decisions has been changed considerably) and also my first relatively non-trivial project, the coding quality may not be ideal.
