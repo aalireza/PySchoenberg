@@ -32,6 +32,7 @@ exact 12-tone matrix which was created to encode the ciphertext.
 <h3> Prerequisites </h3>
 - Python 2.7
 - [Music21](https://code.google.com/p/music21/downloads/list): Twelve-tone matrix is created by this module. You may also install it via pip.
+- [lxml 3.3.6](https://pypi.python.org/pypi/lxml/3.3.6): Needed to parse MusicXML files. Newer versions should be fine as well, theoretically.
 - [MuseScore](http://musescore.com)
 - [Audiveris 4.2.3](https://kenai.com/projects/audiveris/downloads/directory/oldies): The optical music recognition software.
 - [PyCrypto](https://pypi.python.org/pypi/pycrypto): Needed if you're planning to use encoding encrypted messages.
