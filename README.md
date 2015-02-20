@@ -79,3 +79,7 @@ Also, its normal/tonal version is  [here]
 (https://www.dropbox.com/s/3a7y3ckr8i4nnbd/Normal_Rondo_Alla_Turca_Turkish_March_Complete.pdf?dl=0)
 + [Atonalized Mozart's Turkish March]
 (https://www.dropbox.com/s/f2ecsnky2zo6a9s/rondo_Converted-1_Atonalized-0_Converted-0.pdf?dl=0)
+
+---
+
+<br>Credits: </br> This was a hackathon project which was created for SBHacks 2015 (+)[http://challengepost.com/software/modern-mozart]. "Parham Pourdavood" had the original idea of using 12-tones to atonalize musical sheets while saving the rhythm and "Ahmed Shehata" was creating a front-end GUI with Java which was not finished.
