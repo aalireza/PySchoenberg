@@ -47,6 +47,45 @@ def argumentHandling():
     return (args.targetFile, fileFullName, fileName, fileFormat, filePath)
 
 
+def getNotesKey():
+
+    def testNotes(nl):
+        for n in nl:
+            if n not in basicMusic.normal_universe:
+                print ("Invalid Note found")
+                return False
+        for i in range(len(nl)):
+            for j in range(len(nl)):
+                if nl[i] == nl[j] and i != j:
+                    print ("Duplicate notes found")
+                    return False
+        if len(nl) > 12:
+            print ("Too many notes")
+            return False
+        if len(nl) < 12:
+            print ("Too few notes")
+            return False
+
+    def getNotes():
+        noteskey = str(raw_input(str("What is your 12-note encoding key? " +
+                                     " should be separated with a comma " +
+                                     "(,) and only # as accidental e.g. " +
+                                     "A,A#,C,C#,B,G,G#,F#,E,F,D#,D\n" +
+                                     "Your key? ")))
+
+        noteskey = noteskey.strip().replace(" ", "").split(",")
+        for element in noteskey:
+            if element is "":
+                del noteskey[noteskey.index(element)]
+        return noteskey
+
+    key = getNotes()
+    while testNotes(key) is False:
+        key = getNotes()
+
+    return key
+
+
 if __name__ == '__main__':
     f = argumentHandling()
     while f is not None:
@@ -231,29 +270,9 @@ if __name__ == '__main__':
             # Encoder & Encrypter
             your_message = str(raw_input("What is your message? "))
             your_key = gt.getpass("What is your encryption key? ")
-            note_key = str(raw_input(str("What is your 12-note encoding key? " +
-                                         "Should be separated with a comma " +
-                                         "(,) and only # as accidental i.e. " +
-                                         "A,A#,C,C#,B,G,G#,F#,E,F,D#,D\n" +
-                                         "Your key? ")))
-            note_key = note_key.strip().replace(" ", "").split(",")
-            for element in note_key:
-                if element is "":
-                    del note_key[note_key.index(element)]
-            changeflag = None
-            for i in range(len(note_key)):
-                tempnote = note_key[i]
-                while tempnote not in basicMusic.normal_universe:
-                    print("You've entered " + str(note_key) + " which has " +
-                          str(element) + " in it which is not part of valid " +
-                          " notes. Valid notes are: " +
-                          str(basicMusic.normal_universe))
-                    tempnote = str(raw_input("Enter a valid note instead: "))
-                    changeflag = True
-                if changeflag:
-                    note_key[i] = tempnote
-            if changeflag:
-                print ("So your note key is: " + str(note_key))
+            note_key = getNotesKey()
+            print ("\nSo your note key is: " + str(note_key))
+
             your_cipher = aes.encrypt(your_message, your_key)
             print ("Encryption successful. Now encoding...")
             time.sleep(1)
@@ -353,29 +372,9 @@ if __name__ == '__main__':
 
         elif command is 'd':
             your_key = gt.getpass("What is your encryption key? ")
-            note_key = str(raw_input(str("What is your 12-note encoding key? " +
-                                         "Should be separated with a comma " +
-                                         "(,) and only # as accidental i.e. " +
-                                         "A,A#,C,C#,B,G,G#,F#,E,F,D#,D\n" +
-                                         "Your key? ")))
-            note_key = note_key.strip().replace(" ", "").split(",")
-            for element in note_key:
-                if element is "":
-                    del note_key[note_key.index(element)]
-            changeflag = None
-            for i in range(len(note_key)):
-                tempnote = note_key[i]
-                while tempnote not in basicMusic.normal_universe:
-                    print("You've entered " + str(note_key) + " which has " +
-                          str(element) + " in it which is not part of valid " +
-                          " notes. Valid notes are: " +
-                          str(basicMusic.normal_universe))
-                    tempnote = str(raw_input("Enter a valid note instead: "))
-                    changeflag = True
-                if changeflag:
-                    note_key[i] = tempnote
-            if changeflag:
-                print ("So your note key is: " + str(note_key))
+            note_key = getNotesKey()
+
+            print ("\nSo your note key is: " + str(note_key))
             if not os.path.exists("../data/XML/"):
                 os.makedirs("../data/XML/")
             scanFlag = None
