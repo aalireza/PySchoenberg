@@ -82,4 +82,4 @@ Also, its normal/tonal version is  [here]
 
 ---
 
-<br>Credits: </br> This was a hackathon project which was created for SBHacks 2015 (+)[http://challengepost.com/software/modern-mozart]. "Parham Pourdavood" had the original idea of using 12-tones to atonalize musical sheets while saving the rhythm and "Ahmed Shehata" was creating a front-end GUI with Java which was not finished.
+<br>Credits: </br> This was a hackathon project which was created for SBHacks 2015 [+](http://challengepost.com/software/modern-mozart). "Parham Pourdavood" had the original idea of using 12-tones to atonalize musical sheets while saving the rhythm and "Ahmed Shehata" was creating a front-end GUI with Java which was not finished.
