@@ -60,7 +60,7 @@ def encrypt(im, key):
         key = pad(key)
     if len(im) % blocksize != 0:
         im = pad(im)
-        cipher = AES.AESCipher(key, AES.MODE_ECB)
+    cipher = AES.AESCipher(key, AES.MODE_ECB)
     ciphertext = cipher.encrypt(im)
     b16 = binascii.hexlify(bytearray(ciphertext))
     return base10toN(baseNto10(b16, 16), 24)
