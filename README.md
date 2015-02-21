@@ -35,7 +35,7 @@ exact 12-tone matrix which was created to encode the ciphertext.
 - [lxml 3.3.6](https://pypi.python.org/pypi/lxml/3.3.6): Needed to parse MusicXML files. Newer versions should be fine as well, theoretically. You may also install it via pip.
 - [MuseScore](http://musescore.com)
 - [Audiveris 4.2.3](https://kenai.com/projects/audiveris/downloads/directory/oldies): The optical music recognition software.
-- [PyCrypto](https://pypi.python.org/pypi/pycrypto): Needed if you're planning to use encoding encrypted messages.
+- [PyCrypto](https://pypi.python.org/pypi/pycrypto): Needed for AES Encryption/Decryption
 
 <b>Remark: </b>This has only been tested on Ubuntu and Arch linux, though in theory it sould work on OS X as well.
 If you have Windows, you need to go through the source code yourself and translate all of the system commands 
