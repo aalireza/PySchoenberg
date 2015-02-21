@@ -1,6 +1,5 @@
 # Needs to be shrinked up.
 
-import aes
 import atonalize
 import basicMusic
 import implementerAES
@@ -266,6 +265,7 @@ if __name__ == '__main__':
                 break
 
         elif command is 'e':
+            import aes
             # Encoder & Encrypter
             your_message = str(raw_input("What is your message? "))
             your_key = gt.getpass("What is your encryption key? ")
@@ -370,6 +370,8 @@ if __name__ == '__main__':
             break
 
         elif command is 'd':
+            import aes
+
             your_key = gt.getpass("What is your encryption key? ")
             note_key = getNotesKey()
 
