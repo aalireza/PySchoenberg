@@ -85,6 +85,7 @@ def getNotesKey():
 
 
 if __name__ == '__main__':
+
     f = argumentHandling()
     while f is not None:
         command = str(raw_input("Enter your command (Enter 'h' for help): "))
@@ -265,7 +266,11 @@ if __name__ == '__main__':
                 break
 
         elif command is 'e':
-            import aes
+            try:
+                import aes
+            except Exception, e:
+                print str(e)
+                raise SystemExit
             # Encoder & Encrypter
             your_message = str(raw_input("What is your message? "))
             your_key = gt.getpass("What is your encryption key? ")
@@ -370,8 +375,11 @@ if __name__ == '__main__':
             break
 
         elif command is 'd':
-            import aes
-
+            try:
+                import aes
+            except Exception, e:
+                print str(e)
+                raise SystemExit
             your_key = gt.getpass("What is your encryption key? ")
             note_key = getNotesKey()
 
