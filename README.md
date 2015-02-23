@@ -24,22 +24,21 @@ are more blocks of 12 pitches, they all would be removed.
 <b>Remark: </b>The result of encoding a ciphertext would not be perfectly twelve-tonic since almost always the
 number of notes in a sheet is not divisible by twelve.
 
-<b>Remark: </b>For decoding, you need two keys. You actuall encryption key to decrypt the AES encrypted message, 
+<b>Remark: </b>For decoding, you need two keys. Your actual encryption key to decrypt the AES encrypted message, 
 and your encoding key which is a random permutation of notes of the chromatic scale. It is needed to generated the
 exact 12-tone matrix which was created to encode the ciphertext.
 
 ---
-<h3> Prerequisites </h3>
+<h3> Dependencies: </h3>
 - Python 2.7
 - [Music21](https://code.google.com/p/music21/downloads/list): Twelve-tone matrix is created by this module. You may also install it via pip.
 - [lxml 3.3.6](https://pypi.python.org/pypi/lxml/3.3.6): Needed to parse MusicXML files. Newer versions should be fine as well, theoretically. You may also install it via pip.
-- [PyCrypto](https://pypi.python.org/pypi/pycrypto): Needed for AES Encryption/Decryption
-- [MuseScore](http://musescore.com)
-- [Audiveris 4.2.3](https://kenai.com/projects/audiveris/downloads/directory/oldies): The optical music recognition software.
+- [PyCrypto](https://pypi.python.org/pypi/pycrypto): Needed for AES Encryption/Decryption. You may also install it via pip.
+- [MuseScore](http://musescore.com): Needed for sequencing MusicXML files and/or converting other variations of musical data (not pdf or jpg) into xml.
+- [Audiveris 4.2.3](https://kenai.com/projects/audiveris/downloads/directory/oldies): (Optional) The optical music recognition software. If you don't install it, you won't be able to convert your sheet music in jpg or pdf to xml -which is the format that's used here to atonalize etc.
 
 <b>Remark: </b>This has only been tested on Ubuntu and Arch linux, though in theory it sould work on OS X as well.
-If you have Windows, you need to go through the source code yourself and translate all of the system commands 
-yourself.
+If you have Windows, you need to go through the source code and translate all of the system commands yourself.
 
 ---
 <h3> Warning </h3>
