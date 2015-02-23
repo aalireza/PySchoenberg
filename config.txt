@@ -1,6 +1,6 @@
 [System]
 
-# Enter the absolute path to MuseScore. If you're on Mac, the absolute path would  Most probably be the path to 
+# Enter the absolute path to MuseScore. If you're on Mac, the absolute path would most probably be the path to 
 # the executable inside PACKAGE/Contents/MacOS/
 
 MUSESCORE_PATH = /usr/bin/musescore
@@ -11,12 +11,12 @@ AUDIVERIS_PATH = /usr/bin/audiveris
 
 # Enter "xdg-open" if you're on Linux using X11 or "open" if you're on OS X to open media files using the default media
 # player. If you wish to use a specific program, enter its absolute path. If you're on Mac, the absolute path would 
-# Most probably be the path to the executable inside PACKAGE/Contents/MacOS/
+# most probably be the path to the executable inside PACKAGE/Contents/MacOS/
 
 PLAYER_PATH = /usr/bin/vlc
 
 # Enter "xdg-open" if you're on Linux using X11 or "open" if you're on OS X to open PDF using the default PDF viewer
 # If you wish to use a specific program, enter its absolute path. If you're on Mac, the absolute path would 
-# Most probably be the path to the executable inside PACKAGE/Contents/MacOS/
+# most probably be the path to the executable inside PACKAGE/Contents/MacOS/
 
 PDF_VIEWER = /usr/bin/evince
