@@ -32,16 +32,12 @@ def base10toN(num, n):
 
 def baseNto10(num, base):
     result = 0
-    num = list(num)
+    num = list(str(num))
     num.reverse()
     for i in range(len(num)):
-        try:
-            if int(num[i]) in range(10):
-                result += int(num[i]) * base ** int(i)
-        except:
-            for j in range(10, 48):
-                if num[i] == num_rep[j]:
-                    result += int(j) * base ** int(i)
+        for j in num_rep_complete:
+            if num[i] == num_rep_complete[j]:
+                result += int(j) * base ** int(i)
     return result
 
 
