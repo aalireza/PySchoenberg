@@ -1,7 +1,7 @@
 [System]
 
 # Enter the absolute path to MuseScore. If you're on OS X, the absolute path would most probably be the path to 
-# the executable inside PACKAGE/Contents/MacOS/
+# the executable inside PACKAGE/Contents/MacOS/ and also DO NOT put "xdg-open" or "open" instead of an absolute path.
 
 MUSESCORE_PATH = /usr/bin/musescore
 
