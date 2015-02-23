@@ -1,13 +1,22 @@
 [System]
 
-# Enter the absolute path to Audiveris.
-AUDIVERIS_PATH = /usr/bin/audiveris
+# Enter the absolute path to MuseScore. If you're on Mac, the absolute path would  Most probably be the path to 
+# the executable inside PACKAGE/Contents/MacOS/
 
-# Enter the absolute path to MuseScore.
 MUSESCORE_PATH = /usr/bin/musescore
 
-# Enter the absolute path to your media player.
+# Enter the absolute path to Audiveris. It's optional and only needed if you want to import pdf or jpg.
+
+AUDIVERIS_PATH = /usr/bin/audiveris
+
+# Enter "xdg-open" if you're on Linux using X11 or "open" if you're on OS X to open media files using the default media
+# player. If you wish to use a specific program, enter its absolute path. If you're on Mac, the absolute path would 
+# Most probably be the path to the executable inside PACKAGE/Contents/MacOS/
+
 PLAYER_PATH = /usr/bin/vlc
 
-# Enter the absolute path to your PDF viewer.
+# Enter "xdg-open" if you're on Linux using X11 or "open" if you're on OS X to open PDF using the default PDF viewer
+# If you wish to use a specific program, enter its absolute path. If you're on Mac, the absolute path would 
+# Most probably be the path to the executable inside PACKAGE/Contents/MacOS/
+
 PDF_VIEWER = /usr/bin/evince
