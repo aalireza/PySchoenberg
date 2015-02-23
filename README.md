@@ -46,6 +46,8 @@ It's better to not import anything in pdf or jpg format since the optical music 
 are very faulty. The optimal format to be used with this program is MusicXML, which you'll be able to find plenty
 of it in [MuseScore's library](http://musescore.com/sheetmusic). "mxl" and "mscz" formats are fine as well.
 
+<b>Therefore</b> It'll almost always be impossible to retrieve a message if the encoded message is saved as pdf or jpg, since not a single note has to be missed/misread for the message to be recoverable. The only relatively practical solution is to manually rewrite the piece in a program like MuseScore and export it as xml!
+
 ---
 <h3> How to work with it </h3>
 
