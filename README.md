@@ -35,7 +35,7 @@ exact 12-tone matrix which was created to encode the ciphertext.
 - [lxml 3.3.6](https://pypi.python.org/pypi/lxml/3.3.6): Needed to parse MusicXML files. Newer versions should be fine as well, theoretically. You may also install it via pip.
 - [PyCrypto](https://pypi.python.org/pypi/pycrypto): Needed for AES Encryption/Decryption. You may also install it via pip.
 - [MuseScore](http://musescore.com): Needed for sequencing MusicXML files and/or converting other variations of musical data (not pdf or jpg) into xml.
-- [Audiveris 4.2.3](https://kenai.com/projects/audiveris/downloads/directory/oldies): (Optional) The optical music recognition software. If you don't install it, you won't be able to convert your sheet music in jpg or pdf to xml -which is the format that's used here to atonalize etc.
+- [Audiveris 4.2.3](https://kenai.com/projects/audiveris/downloads/directory/oldies): (Optional) The optical music recognition software. If you don't install it, you won't be able to convert your sheet music from jpg or pdf to xml -which is the format that's used here to atonalize etc.
 
 <b>Remark: </b>This has only been tested on Ubuntu and Arch linux, though in theory it sould work on OS X as well.
 If you have Windows, you need to go through the source code and translate all of the system commands yourself.
@@ -57,6 +57,8 @@ help).
 <b>Remark: </b> -r switch can be used to remove stuff from ./data/*/*
 
 <b>Remark: </b> This program will not overwrite stuff for the sake of saving different atonalized versions of a file, however you should purge whatever you have created after you're done with it to avoid confusion.
+
+<b>Remark: </b> If you've encoded something, the result in xml format would be saved in ./data/AES/ therefore you'll need to point to that file when trying to open up the program to decode.
 
 ---
 <h3> Sample Music Files </h3>
