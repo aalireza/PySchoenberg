@@ -5,7 +5,7 @@ This program atonalizes the tonal music by preserving the rhythm but changing ea
 12-tone technique. It could also encode AES-128 ciphertexts as sheet music!
 
 ---
-<h3> How it is implemented? </h3>
+<h3> How is it implemented? </h3>
 You may first want to read the Wikipedia entry [here](https://en.wikipedia.org/wiki/Twelve-tone_technique) for the
 basics. 
 The basis for creation of the tone row for atonalizing is a random permutation of the 12 notes of the chromatic
