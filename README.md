@@ -17,7 +17,7 @@ base 24. Then all of the possible numbers from 0 to 23 are assigned to a valid p
 block of 12 pitches in the original music would be replaced by the path of each character of the ciphertext. If there
 are more blocks of 12 pitches, they all would be removed.
 
-<b>Remark: </b>For the sake of simplicity, though, this program uses only # as the accidental of each note.
+<b>Remark: </b>For the sake of simplicity, though, this program uses only "sharp" as the accidental of each note and does not use "flat" although by definition, "normal" would not cause problems.
 
 <b>Remark: </b>Things like repeat signs make the outcome to not be perfect twelve-tonic.
 
