@@ -1,5 +1,10 @@
-# To find an absolute path of a program in OS X, usually, you need to enter the path to PACKAGE.app/Contents/MacOS/APP. Let's say you've installed Musescore.app in /Applications directory, then the path would be /Applications/Musescore.app/Contents/MacOS/mscore. If you've installed it via Homebrew Cask, then the path would probably be something line /opt/homebrew-cask/Caskroom/musescore/2.0.1/Musescore\ 2.app/Contents/MacOS/mscore.
-# To find an absolute path of a program in Linux, assuming you have an executable ready, you need to put the output of `which COMMAND`. Let's say you want to enter the absolute path to command `musescore`, then the output of `which musescore` would probably be `/usr/bin/musescore` which you need to enter that.
+# To find an absolute path of a program in OS X, usually, you need to enter the path to 
+# PACKAGE.app/Contents/MacOS/APP. Let's say you've installed Musescore.app in /Applications directory, then the
+# path would be /Applications/Musescore.app/Contents/MacOS/mscore. If you've installed it via Homebrew Cask, then
+# the path would probably be something line /opt/homebrew-cask/Caskroom/musescore/2.0.1/Musescore\ 2.app/Contents/MacOS/mscore.
+# To find an absolute path of a program in Linux, assuming you have an executable ready, you need to put the output
+# of `which COMMAND`. Let's say you want to enter the absolute path to command `musescore`, then the output of
+# `which musescore` would probably be `/usr/bin/musescore` which you need to enter that.
 
 [System]
 
