@@ -52,7 +52,7 @@ of it in [MuseScore's library](http://musescore.com/sheetmusic). "mxl" and "mscz
 
 1. Open up your terminal. Go to a directory you wish to install the program, then `git clone https://github.com/aalireza/PySchoenberg.git`
 2. Go to the directory in which you've cloned the program during the step one. Then open up `config.txt`. You must fill in te sections for MUSESCORE_PATH, PLAYER_PATH and PDF_VIEWER and fill in the AUDIVERIS_PATH if you've installed the optional Audiveris program. Follow the instructions in config.txt to do so.
-3. Now enter `python path-to-PySchoenberg-dir/src/main.py -f path-to-your-file`. (For example, if you have cloned PySchoenberg in your home directory and you have a file Fur_Elise.xml in your Downloads directory, then the command would be `python ~/PySchoenberg-master/src/main.py -f ~/Downloads/Fur_Elise.xml`)
+3. Now enter `python path-to-PySchoenberg-dir/src/main.py -f path-to-your-file`. (For example, if you have cloned PySchoenberg in your home directory and you have a file Fur_Elise.xml in your Downloads directory, then the command would be `python ~/PySchoenberg/src/main.py -f ~/Downloads/Fur_Elise.xml`)
 4. The script of step 3 is interactive. You could press 'h' to see the options you have. 'a' is an option to atonalize the sheet. 'e' is to encode etc.
 
 <b>Remark: </b> -r switch can be used to remove stuff from ./data/*/*
