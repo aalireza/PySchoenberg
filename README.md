@@ -31,18 +31,17 @@ exact 12-tone matrix which was created to encode the ciphertext.
 ---
 <h3> Dependencies: </h3>
 - Python 2.7
-- [Music21](https://code.google.com/p/music21/downloads/list): Twelve-tone matrix is created by this module. You may also install it via pip.
-- [lxml 3.3.6](https://pypi.python.org/pypi/lxml/3.3.6): Needed to parse MusicXML files. Newer versions should be fine as well, theoretically. You may also install it via pip.
-- [PyCrypto](https://pypi.python.org/pypi/pycrypto): Needed for AES Encryption/Decryption. You may also install it via pip.
+- [Music21](https://pypi.python.org/pypi/music21): Twelve-tone matrix is created by this module..
+- [lxml](https://pypi.python.org/pypi/lxml)
+- [PyCrypto](https://pypi.python.org/pypi/pycrypto): Needed for AES Encryption/Decryption.
 - [MuseScore](http://musescore.com): Needed for sequencing MusicXML files and/or converting other variations of musical data (not pdf or jpg) into xml.
 - [Audiveris 4.2.3](https://kenai.com/projects/audiveris/downloads/directory/oldies): (Optional) The optical music recognition software. If you don't install it, you won't be able to convert your sheet music from jpg or pdf to xml -which is the format that's used here to atonalize etc.
 
-<b>Remark: </b>This has only been tested on Ubuntu and Arch linux, though in theory it sould work on OS X as well.
-If you have Windows, you need to go through the source code and translate all of the system commands yourself.
+<b>Remark: </b> This program doesn't work on Windows.
 
 ---
 <h3> Warning </h3>
-It's better to not import anything in pdf or jpg format since the optical music recognition softwares 
+It's better to not import anything in pdf or jpg format since the optical music recognition software 
 are very faulty. The optimal format to be used with this program is MusicXML, which you'll be able to find plenty
 of it in [MuseScore's library](http://musescore.com/sheetmusic). "mxl" and "mscz" formats are fine as well.
 
@@ -51,10 +50,10 @@ of it in [MuseScore's library](http://musescore.com/sheetmusic). "mxl" and "mscz
 ---
 <h3> How to work with it </h3>
 
-Clone this locally or download it as zip (link to your right). First go to ./config.txt and change what you need. Then cd into .src i.e.
-``` cd ~/PATH TO MAIN FOLDER/PySchoenberg/src/ ``` then 
-``` python main.py -f ABSOLUTE-PATH-TO-YOUR-FILE ```. The rest should be obvious (you may press 'h' there for
-help).
+1. Open up your terminal. Go to a directory you wish to install the program, then `git clone https://github.com/aalireza/PySchoenberg.git`
+2. Go to the directory in which you've cloned the program during the step one. Then open up `config.txt`. You must fill in te sections for MUSESCORE_PATH, PLAYER_PATH and PDF_VIEWER and fill in the AUDIVERIS_PATH if you've installed the optional Audiveris program. Follow the instructions in config.txt to do so.
+3. Now enter `python path-to-PySchoenberg-dir/src/main.py -f path-to-your-file`. (For example, if you have cloned PySchoenberg in your home directory and you have a file Fur_Elise.xml in your Downloads directory, then the command would be `python ~/PySchoenberg-master/src/main.py -f ~/Downloads/Fur_Elise.xml`)
+4. The script of step 3 is interactive. You could press 'h' to see the options you have. 'a' is an option to atonalize the sheet. 'e' is to encode etc.
 
 <b>Remark: </b> -r switch can be used to remove stuff from ./data/*/*
 
