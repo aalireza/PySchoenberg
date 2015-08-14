@@ -67,7 +67,7 @@ of it in [MuseScore's library](http://musescore.com/sheetmusic). "mxl" and "mscz
 Notice that the Atonalized versions of Mozart's Turkish March and the Batuque share the same form(!).
 
 + [Atonalized Mozart's Turkish March]
-(https://www.dropbox.com/s/fg7pjsj6fzy48w0/rondo_Atonalized-1.mp3?dl=0)
+(https://www.dropbox.com/s/jrk1ow1qv08dm46/Rondo_Alla_Turca_Atonalized-0.mp3?dl=0)
 Also, its normal/tonal version is  [here]
 (https://www.dropbox.com/s/u1ju2k6anzrao6e/Normal_Rondo_Alla_Turca_Turkish_March.mp3?dl=0)
 
@@ -81,7 +81,7 @@ Also, its normal/tonal version is  [here]
 + [Normal Mozart's Turkish March]
 (https://www.dropbox.com/s/3a7y3ckr8i4nnbd/Normal_Rondo_Alla_Turca_Turkish_March_Complete.pdf?dl=0)
 + [Atonalized Mozart's Turkish March]
-(https://www.dropbox.com/s/f2ecsnky2zo6a9s/rondo_Converted-1_Atonalized-0_Converted-0.pdf?dl=0)
+(https://www.dropbox.com/s/n2xfpg2yguqhh8w/Rondo_Alla_Turca_Atonalized-0_Converted2PDF.pdf?dl=0)
 
 ---
 
