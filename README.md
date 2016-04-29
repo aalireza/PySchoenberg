@@ -1,26 +1,24 @@
 # PySchoenberg
 Twelve-Tonic Atonalizer and Encoder
 
-This program atonalizes the tonal music by preserving the rhythm but changing each pitch according to Schoenberg's
-12-tone technique. It could also encode AES-128 ciphertexts as sheet music!
+This program atonalizes the tonal music by preserving the elements of the original music such as rhythm, texture, dynamics, and timbre but changing each pitch so that the musical lines follow Schoenberg's 12-tone technique. Users may enjoy a unique experience of listening to atonalized music that was originally written tonally. PySchoenberg also facilitates the process of writing 12-tone music and allows composers to write with an ease and speed that would not be possible otherwise. It could also encode AES-128 ciphertexts as sheet music!
 
 ---
 <h3> How it is implemented? </h3>
-You may first want to read the Wikipedia entry [here](https://en.wikipedia.org/wiki/Twelve-tone_technique) for the
-basics. 
-The basis for creation of the tone row for atonalizing is a random permutation of the 12 notes of the chromatic
-scale to form an ordered list. Then each note would be transposed and a 12-tone matrix would be generated. Then, each
-block of 12 pitches in the original music would be replaced with a randomly chosen valid path on the 12-tone matrix's
-rows (i.e. right to left or left to right).
-As for the encoding implementation, first a message is encrypted with AES-128 (implementation in ./src/aes.py) in 
-base 24. Then all of the possible numbers from 0 to 23 are assigned to a valid path on the 12-tone matrix. Then, each
-block of 12 pitches in the original music would be replaced by the path of each character of the ciphertext. If there
-are more blocks of 12 pitches, they all would be removed.
+You may first want to read the Wikipedia entry here for the basics. The building block of the 12-tone technique is the tone row, which is an ordered arrangement of all chromatic scale notes occurring only once within the row. The tone row may appear in four different forms of Prime, Retrograde, Inversion, and Retrograde-Inversion. The tone row and its forms may be freely transposed in any degree of the chromatic scale. Any pitch in the set also can be composed in any octave. To access all the possible rows, a 12-tone matrix is generated. Then, each block of 12 pitches in the original music would be replaced with a randomly chosen series of the 12-tone matrix. 
 
-<b>Remark: </b>For the sake of simplicity, though, this program uses only # as the accidental of each note.
+<h3> Musical Outcome </h3>
 
-<b>Remark: </b>Things like repeat signs make the outcome to not be perfect twelve-tonic.
+The fact that PySchoenberg follows the strict principals of 12-tone technique allows for producing a music that is slightly different from commonplace method of writing 12-tone music, which is not that limited by strict 12-tonic principals. To give an example, PySchoenberg follows the principle of not repeating a pitch until all other pitches have been used in the set. However, repeating the same note or group of notes in succession is customary in this style. Also, as a coincidence, some sets may be used simultaneously in different parts that cause certain tonal relations between the notes (e.g. triads or harmonic elements) that a composer would avoid using. The result of the atonalized music sounds unique and unusual since, regardless of the pitches, the rhythm and contour of the new music belongs to a tonal one. Moreover, for the sake of simplicity this program uses only the sharp symbol (♯) as the accidental.
 
+
+<h3> Composing Benefits </h3>
+
+PySchoenberg by skipping the cumbersome process of manually plugging in 12-tone rows saves composers a tremendous amount of time and energy and allows them to focus on structure, rhythm, contour, and other important aspects of their composition. By automating the process of atonalizing, this program affects the volume of atonal and12-tone music composers will be able to produce and helps composers enrich and diversify the current repertoire of 12-tone music. 
+
+<h3> Encoder </h3>
+
+For the encoding implementation, first a message is encrypted with AES-128 (implementation in ./src/aes.py) in base 24. Then all of the possible numbers from 0 to 23 are assigned to a valid path on the 12-tone matrix. Then, each block of 12 pitches in the original music would be replaced by the path of each character of the ciphertext. If there are more blocks of 12 pitches, they all would be removed
 <b>Remark: </b>The result of encoding a ciphertext would not be perfectly twelve-tonic since almost always the
 number of notes in a sheet is not divisible by twelve.
 
@@ -83,6 +81,7 @@ Also, its normal/tonal version is  [here]
 
 ---
 
-<b>Credits: </b> This was a hackathon project which was created for SBHacks 2015 [(Link  is here)](http://challengepost.com/software/modern-mozart). "Parham Pourdavood" had the original idea of using 12-tones to atonalize musical sheets while saving the rhythm and "Ahmed Shehata" was creating a front-end GUI with Java which was not finished.
+<b>Credits: </b> "Parham Pourdavood" had the original idea of automating 12-tone technique to atonalize tonal music while preserving the rhythm and metric structure of the original music. 
+This was a hackathon project which was created for SBHacks 2015 [(Link  is here)](http://challengepost.com/software/modern-mozart). 
 
-<b>Disclaimer: </b> Since it was originally a hackathon project (albeit the design decisions has been changed considerably) and also my first relatively non-trivial project, the coding quality may not be ideal.
+<b>Disclaimer: </b> Since PySchoenberg was originally a hackathon project (albeit the design decisions has been changed considerably) and also my first relatively non-trivial project, the coding quality may not be ideal.
