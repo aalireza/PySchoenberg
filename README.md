@@ -1,9 +1,11 @@
 # PySchoenberg
-Twelve-Tonic Atonalizer and Encoder
 
 This program atonalizes the tonal music by preserving the elements of the original music such as rhythm, texture, dynamics, and timbre but changing each pitch so that the musical lines follow Schoenberg's 12-tone technique. Users may enjoy a unique experience of listening to atonalized music that was originally written tonally. PySchoenberg also facilitates the process of writing 12-tone music and allows composers to write with an ease and speed that would not be possible otherwise. It could also encode AES-128 ciphertexts as sheet music!
 
 ---
+
+<h3> Twelve-Tonic Atonalizer </h3>
+
 <h3> How it is implemented? </h3>
 You may first want to read the Wikipedia entry here for the basics. The building block of the 12-tone technique is the tone row, which is an ordered arrangement of all chromatic scale notes occurring only once within the row. The tone row may appear in four different forms of Prime, Retrograde, Inversion, and Retrograde-Inversion. The tone row and its forms may be freely transposed in any degree of the chromatic scale. Any pitch in the set also can be composed in any octave. To access all the possible rows, a 12-tone matrix is generated. Then, each block of 12 pitches in the original music would be replaced with a randomly chosen series of the 12-tone matrix. 
 
@@ -18,7 +20,8 @@ PySchoenberg by skipping the cumbersome process of manually plugging in 12-tone 
 
 <h3> Encoder </h3>
 
-For the encoding implementation, first a message is encrypted with AES-128 (implementation in ./src/aes.py) in base 24. Then all of the possible numbers from 0 to 23 are assigned to a valid path on the 12-tone matrix. Then, each block of 12 pitches in the original music would be replaced by the path of each character of the ciphertext. If there are more blocks of 12 pitches, they all would be removed
+For the encoding implementation, first a message is encrypted with AES-128 (implementation in ./src/aes.py) in base 24. Then all of the possible numbers from 0 to 23 are assigned to a valid path on the 12-tone matrix. Then, each block of 12 pitches in the original music would be replaced by the path of each character of the ciphertext. If there are more blocks of 12 pitches, they all would be removed.
+
 <b>Remark: </b>The result of encoding a ciphertext would not be perfectly twelve-tonic since almost always the
 number of notes in a sheet is not divisible by twelve.
 
