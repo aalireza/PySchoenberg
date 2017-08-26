@@ -23,7 +23,7 @@ class Note(object):
         return self.name < other.name
 
 
-NOTES = [
+NOTES = tuple([
     Note(note[0], bool(note[-1] == "#"))
     for note in ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"]
-]
+])
