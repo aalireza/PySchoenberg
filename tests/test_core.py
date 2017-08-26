@@ -9,3 +9,11 @@ import pytest
 ])
 def test_order(first, second):
     assert first < second
+
+
+@pytest.mark.parametrize(('first', 'second'), [
+    (NOTES[0], NOTES[0]),
+    (NOTES[1], NOTES[0]),
+])
+def test_order_negative(first,second):
+    assert not (first < second)
