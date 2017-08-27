@@ -17,15 +17,13 @@ class Note(object):
 
     def __eq__(self, other):
         if isinstance(other, Note):
-            return self.name == other.name and self.is_sharp == other.is_sharp
+            return int(self) == int(other)
         return False
 
     def __lt__(self, other):
         if (not isinstance(other, Note)) or (self == other):
             return False
-        if self.name == other.name:
-            return other.is_sharp
-        return self.name < other.name
+        return int(self) < int(other)
 
     def __int__(self):
         return _ORDERED_NOTE_REPRS.index(self.__repr__()) + 1
