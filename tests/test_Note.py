@@ -1,46 +1,37 @@
-from PySchoenberg.core import Note, Row
-from .utils import NOTES
+from PySchoenberg.core import Note
 import pytest
 
-@pytest.mark.parametrize(('first', 'second'), [
-    (NOTES[0], NOTES[1]),
-    (NOTES[0], NOTES[11]),
-    (NOTES[5], NOTES[9])
+
+@pytest.mark.parametrize(('pretty_note', 'note', 'is_sharp'), [
+    ("C#", "C", True),
+    ("C", "C", False),
+    ("G#", "G", True)
 ])
-def test_order(first, second):
-    assert first < second
+def test_parse(pretty_note, note, is_sharp):
+    assert Note.parse(pretty_note) == Note(note, is_sharp)
 
 
-@pytest.mark.parametrize(('first', 'second'), [
-    (NOTES[0], NOTES[0]),
-    (NOTES[1], NOTES[0]),
-])
-def test_order_negative(first,second):
-    assert not (first < second)
+@pytest.fixture()
+def notes():
+    return [Note.parse(pretty_note) for pretty_note in [
+        "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
+    ]]
 
 
-@pytest.mark.parametrize(('first', 'second'), [
-    (NOTES[0], NOTES[0]),
-    (NOTES[1], NOTES[1]),
-])
-def test_equality(first, second):
-    assert first == second
+def test_int(notes):
+    for index, note in enumerate(notes):
+        assert int(note) == index + 1
+
+@pytest.mark.parametrize(('first', 'second'), [(0, 1), (0, 11), (5, 9)])
+def test_order(notes, first, second):
+    assert notes[first] < notes[second]
 
 
-@pytest.mark.parametrize(('row', 'amount', 'result'), [
-    (["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"],
-     0,
-     ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"]),
-    (["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"],
-     2,
-     ["B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#"]),
-    (["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"],
-     12,
-     ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"]),
-])
-def test_shifting_row(row, amount, result):
-    first = Row(row)
-    second = Row(result)
-    first.shift_row(amount)
-    assert first == second
+@pytest.mark.parametrize(('first', 'second'), [(0, 0), (1, 0)])
+def test_order_negative(notes, first, second):
+    assert not (notes[first] < notes[second])
 
+
+@pytest.mark.parametrize(('first', 'second'), [(0, 0), (1, 1)])
+def test_equality(notes, first, second):
+    assert notes[first] == notes[second]
