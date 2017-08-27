@@ -66,7 +66,7 @@ class Row(object):
         return self.__row[i]
 
     def __repr__(self):
-        return "Row{}".format(self.__row)
+        return "Row{!r}".format(self.__row)
 
 
 class Matrix(object):
@@ -84,3 +84,28 @@ class Matrix(object):
             transformed_base_row.corresponding_column(arity)
             for arity in range(1, 13)
         ]
+
+    @property
+    def base_row(self):
+        return self.__matrix[0]
+
+    def to_numerical(self):
+        return tuple([x.to_numerical() for x in self])
+
+    def make_transposed(self):
+        return Matrix(self.base_row.corresponding_column(1))
+
+    def row(self, index):
+        return self[index]
+
+    def column(self, index):
+        return self.base_row.corresponding_column(index + 1)
+
+    def __iter__(self):
+        return self.__matrix.__iter__()
+
+    def __getitem__(self, i):
+        return self.__matrix[i]
+
+    def __repr__(self):
+        return "Matrix{!r}".format(self.__matrix)
