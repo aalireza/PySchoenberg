@@ -1,5 +1,5 @@
-_ORDERED_NOTE_REPRS = tuple(["A", "A#", "B", "C", "C#", "D", "D#", "E",
-                             "F", "F#", "G", "G#"])
+_ORDERED_NOTE_REPRS = tuple(["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#",
+                             "A", "A#", "B"])
 
 
 class Note(object):
