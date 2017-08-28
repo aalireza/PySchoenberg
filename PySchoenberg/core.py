@@ -7,6 +7,7 @@ class Note(object):
         return Note(pretty_note[0], bool(pretty_note[-1] == "#"))
 
     def __init__(self, name, is_sharp=False):
+        assert len(name) == 1
         self.name = name.capitalize()
         self.is_sharp = is_sharp
 
@@ -30,9 +31,10 @@ class Note(object):
 
 
 class Row(object):
-    def __init__(self, row_list=_ORDERED_NOTE_REPRS):
+    def __init__(self, row_list):
         assert len(row_list) == 12
-        self.__row = tuple([Note.parse(note) for note in row_list])
+        assert all([isinstance(note, Note) for note in row_list])
+        self.__row = tuple(row_list)
 
     def shift_row(self, amount):
         self.__row = (self.__row[amount:] + self.__row[:amount])
@@ -40,11 +42,13 @@ class Row(object):
     def to_numerical(self):
         return tuple(map(int, self))
 
+    def parse_pretty_notes(pretty_row_list):
+        return Row(tuple([Note.parse(pretty_note)
+                          for pretty_note in pretty_row_list]))
+
     def parse_numerical(numerical_row):
-        return Row([
-            _ORDERED_NOTE_REPRS[number - 1]
-            for number in numerical_row
-        ])
+        return Row(list(map(Note.parse, ([_ORDERED_NOTE_REPRS[number - 1]
+                                          for number in numerical_row]))))
 
     def corresponding_column(self, arity):
         numerical_column = [int(self.__row[arity - 1])]
