@@ -1,3 +1,7 @@
+from lxml import etree
+import os
+
+
 _ORDERED_NOTE_REPRS = tuple(["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#",
                              "A", "A#", "B"])
 
@@ -111,3 +115,56 @@ class Matrix(object):
 
     def __repr__(self):
         return "Matrix{!r}".format(self.__matrix)
+
+
+class Sheet(object):
+    def __init__(self, path):
+        self.tree = etree.parse(os.path.abspath(path))
+
+    @property
+    def root(self):
+        return self.tree.getroot()
+
+    @property
+    def parts(self):
+        return self.root.findall('part')
+
+    def _find_all_flatly(things, name):
+        names = list()
+        for thing in things:
+            names.extend(thing.findall(str(name)))
+        return names
+
+    def measures(self, part_index=None):
+        if part_index is None:
+            return Sheet._find_all_flatly(self.parts, 'measure')
+        return self.parts[part_index].findall('measure')
+
+    def notes(self, part_index=None, measure_index=None):
+        if measure_index is None:
+            return Sheet._find_all_flatly(self.measures(part_index), 'note')
+        return self.measures(part_index)[measure_index].findall('note')
+
+    def __embed_credits(self, pad=10):
+        defaults = self.root.find("defaults")
+        pageLayout = defaults.find("page-layout")
+        pageHeight = pageLayout.find("page-height")
+        credit = etree.Element("credit", {"page": "1"})
+        creditWords = etree.SubElement(
+            credit, "credit-words", {
+                "default-x": str(pad),
+                "default-y": str(int(float(pageHeight.text) - pad)),
+                "font-size": "12",
+                "justify": "left",
+                "valign": "top"
+            }
+        )
+        creditWords.text = "Atonalized by PySchoenberg"
+        defaults.addnext(credit)
+
+    def export(self, path):
+        self.__embed_credits()
+        self.tree.write(path)
+
+    def __len__(self):
+        return len(self.notes)
