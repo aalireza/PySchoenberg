@@ -1,4 +1,5 @@
 from lxml import etree
+from random import shuffle
 import os
 
 
@@ -7,7 +8,14 @@ _ORDERED_NOTE_REPRS = tuple(["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#",
 
 
 class Note(object):
+    class Verification(object):
+        def pretty(note):
+            if note not in _ORDERED_NOTE_REPRS:
+                raise TypeError("The note is not parsable")
+            return True
+
     def parse(pretty_note):
+        assert Note.Verification(pretty_note)
         return Note(pretty_note[0], bool(pretty_note[-1] == "#"))
 
     def __init__(self, name, is_sharp=False):
@@ -35,9 +43,37 @@ class Note(object):
 
 
 class Row(object):
+
+    class Verification(object):
+        def length(row_list):
+            if len(row_list) != 12:
+                raise ValueError("There must be 12 notes in the row")
+            if len(row_list) != len(set(row_list)):
+                raise ValueError("There must be 12 unique notes in a row")
+            return True
+
+        def numerical(row_list):
+            if not all([isinstance(note, int) for note in row_list]):
+                raise TypeError("At least one note is not an integer")
+            if not all([1 <= note <= 12 for note in row_list]):
+                raise ValueError("At least one note is not between 1 and 12")
+            return True
+
+        def pretty(row_list):
+            if any([note not in _ORDERED_NOTE_REPRS for note in row_list]):
+                raise TypeError(
+                    "At least one note does not have correct representation"
+                )
+            return True
+
+        def note_object(row_list):
+            if not all([isinstance(note, Note) for note in row_list]):
+                raise TypeError("At least one note is not an instance of Note")
+            return True
+
     def __init__(self, row_list):
-        assert len(row_list) == 12
-        assert all([isinstance(note, Note) for note in row_list])
+        assert Row.Verification.length(row_list)
+        assert Row.Verification.note_object(row_list)
         self.__row = tuple(row_list)
 
     def shift_row(self, amount):
@@ -47,20 +83,27 @@ class Row(object):
         return tuple(map(int, self))
 
     def parse_pretty_notes(pretty_row_list):
+        assert Row.Verification.length(pretty_row_list)
+        assert Row.Verification.pretty(pretty_row_list)
         return Row(tuple([Note.parse(pretty_note)
                           for pretty_note in pretty_row_list]))
 
     def parse_numerical(numerical_row):
+        assert Row.Verification.length(numerical_row)
+        assert Row.Verification.numerical(numerical_row)
         return Row(list(map(Note.parse, ([_ORDERED_NOTE_REPRS[number - 1]
                                           for number in numerical_row]))))
 
     def corresponding_column(self, arity):
         numerical_column = [int(self.__row[arity - 1])]
         for i in range(1, 12):
-            candidate = ((numerical_column[-1] - (int(self.__row[i]) -
-                                                  int(self.__row[i - 1]))) % 12)
+            candidate = (numerical_column[-1] -
+                         (int(self.__row[i]) - int(self.__row[i - 1]))) % 12
             numerical_column.append(12 if candidate == 0 else candidate)
         return Row.parse_numerical(numerical_column)
+
+    def random():
+        return Row.parse_pretty_notes(shuffle(_ORDERED_NOTE_REPRS))
 
     def __eq__(self, other):
         return all([self[index] == other[index] for index in range(12)])
@@ -76,7 +119,15 @@ class Row(object):
 
 
 class Matrix(object):
+
+    class Verification(object):
+        def base_row(row):
+            if isinstance(row, Row):
+                return True
+            raise TypeError("The input row is not an instance of Row")
+
     def __init__(self, base_row):
+        assert Matrix.Verification.base_row(base_row)
         # Looping through correspondign columns generates a transposed matrix
         # if it's fed with the base_row directly since there's no specific
         # representation of a column in Python and they must be represented as
