@@ -4,6 +4,11 @@ Twelve-Tonic Atonalizer and Encoder
 This program atonalizes the tonal music by preserving the rhythm but changing each pitch according to Schoenberg's
 12-tone technique. It could also encode AES-128 ciphertexts as sheet music!
 
+## Warning
+This code was written a few months after I learned how to program. The code quality was atrocious then, and the refactor I tried to do a year or two later is no better. Nonetheless, the idea behind it is still there and you can continue with the README or check out the samples directory.
+
+This project is not maintained. If you were actually thinking about using this, check in with me as I want to know what you do!
+
 ---
 <h3> How is it implemented? </h3>
 You may first want to read the Wikipedia entry [here](https://en.wikipedia.org/wiki/Twelve-tone_technique) for the
@@ -60,28 +65,6 @@ of it in [MuseScore's library](http://musescore.com/sheetmusic). "mxl" and "mscz
 <b>Remark: </b> This program will not overwrite stuff for the sake of saving different atonalized versions of a file, however you should purge whatever you have created after you're done with it to avoid confusion.
 
 <b>Remark: </b> If you've encoded something, the result in xml format would be saved in ./data/AES/ therefore you'll need to point to that file when trying to open up the program to decode.
-
----
-<h3> Sample Music Files </h3>
-
-Notice that the Atonalized versions of Mozart's Turkish March and the Batuque share the same form(!).
-
-+ [Atonalized Mozart's Turkish March]
-(https://www.dropbox.com/s/jrk1ow1qv08dm46/Rondo_Alla_Turca_Atonalized-0.mp3?dl=0)
-Also, its normal/tonal version is  [here]
-(https://www.dropbox.com/s/u1ju2k6anzrao6e/Normal_Rondo_Alla_Turca_Turkish_March.mp3?dl=0)
-
-+ [Atonalized Beethoven's Moonlight SonataMvt3 (Version#1 (Regular Tempo: Presto agitato), Complete)](https://www.dropbox.com/s/r17hab1p37ziic8/Moonlight_Sonata_3rd_Movement_-_Ludwig_van_Beethoven_Atonalized-0.mp3?dl=0) Also its normal/tonal version is [here](https://www.dropbox.com/s/71zm6parsfavbe4/Normal_Moonlight_Sonata_3rd_Movement.mp3?dl=0).
-
-+ [Atonalized Beethoven's Moonlight SonataMvt3 (Version#2 (Slower Tempo: Moderato, different note row than above), First Page)](https://www.dropbox.com/s/25ooxiionty9mnw/file-0_Atonalized-0.mp3?dl=0)
-+ [A Batuque](https://www.dropbox.com/s/q98dz55cz2ee2p3/batuque_Atonalized-0.mp3?dl=0) Also its original/unaltered version which was taken from Arudiveris' library is [here](https://www.dropbox.com/s/jxkvp8eo184j3al/batuque_original.mp3?dl=0)
-
-<h3> Sample Sheet Music </h3>
-
-+ [Normal Mozart's Turkish March]
-(https://www.dropbox.com/s/i7gl4rc8m825a78/Rondo_Alla_Turca_Converted2PDF.pdf?dl=0)
-+ [Atonalized Mozart's Turkish March]
-(https://www.dropbox.com/s/n2xfpg2yguqhh8w/Rondo_Alla_Turca_Atonalized-0_Converted2PDF.pdf?dl=0)
 
 ---
 
